@@ -67,6 +67,7 @@ class Newsletters(Resource):
 api.add_resource(Newsletters, "/newsletters")
 
 
+# build a resource to retrieve a single record
 class NewsletterByID(Resource):
     def get(self, id):
         response_dict = Newsletter.query.filter_by(id=id).first().to_dict()
